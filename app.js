@@ -7,7 +7,17 @@ const mensaje = document.querySelector(".mensaje");
 //La letra "o" es convertida para "ober"
 //La letra "u" es convertida para "ufat"
 
-
+function copiar(){
+    const mensajeCopiar = mensaje.value
+    navigator.clipboard.writeText(mensajeCopiar)
+        .then(()=>{
+            document.querySelector(".btn-copiar").innerHTML = "Copiado"
+            setTimeout(()=>{
+                document.querySelector(".btn-copiar").innerHTML = "Copiar"
+            },1000)
+        })
+    
+}
 
 function btnEncriptar(){
     const textoEncriptado = encriptar(textArea.value)
